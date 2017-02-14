@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<center>
+    <div class="jumbotron">
+        <h1> United Extended Home Healthcare</h1>
+        <p class="lead">Your next step to giving the best cares for your Elders.</p>
+        @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+
+    </div>
+</center>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Register</h2>
+        <p>
+            Register here to create an Account with United Home Healthcare
+        </p>
+        <p>@Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Log In</h2>
+        <p>Login to Edit Profile.</p>
+        <p>@Html.ActionLink("Log In", "Login", "Account", null, new { @class = "btn btn-default" })</p>
+    </div>
+
+</div>
+@*@section scripts {
+    <script>var testing = true;</script>
+}*@
