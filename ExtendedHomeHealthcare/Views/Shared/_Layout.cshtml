@@ -1,14 +1,12 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title -Extended Home Healthcare</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+﻿<link href="~/Content/FrontPageStyle/bootstrap.min.css" rel="stylesheet">
 
-</head>
-<body>
+
+<link href="~/Content/FrontPageStyle/stylish-portfolio.css" rel="stylesheet">
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -19,6 +17,8 @@
                 </button>
                 @Html.ActionLink("United Extended Home Healthcare", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+@if (Request.IsAuthenticated)
+{
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -31,18 +31,32 @@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+}
+else
+{
+     <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Services", "Services", "Home")</li>
+                    <li>@Html.ActionLink("Employment", "Employment", "Home")</li>
+                    <li>@Html.ActionLink("Events", "Events", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+}
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year -  United Extended Home Healthcare</p>
-        </footer>
-    </div>
+
+    @RenderBody()
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+                  @*</div>
+              </div>*@
+
+    
 </body>
-</html>

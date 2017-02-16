@@ -275,6 +275,7 @@ table {
     page-break-after: avoid;
   }
   .navbar {
+    margin-bottom: 50px;
     display: none;
   }
   .table td,
@@ -1769,7 +1770,7 @@ textarea.form-control {
 .radio label,
 .checkbox label {
   display: inline;
-  margin-bottom: 0;
+  /*margin-bottom: 0;*/
   font-weight: normal;
   cursor: pointer;
 }

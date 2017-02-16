@@ -1,4 +1,7 @@
-﻿using Microsoft.Owin;
+﻿using ExtendedHomeHealthcare.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(ExtendedHomeHealthcare.Startup))]
@@ -10,5 +13,6 @@ namespace ExtendedHomeHealthcare
         {
             ConfigureAuth(app);
         }
+      
     }
 }

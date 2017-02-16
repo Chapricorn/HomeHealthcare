@@ -26,7 +26,7 @@ namespace ExtendedHomeHealthcare.Models
         DbSet<State> state { get; set; }
         DbSet<ZipCode> zipcode { get; set; }
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            //: base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
@@ -34,7 +34,5 @@ namespace ExtendedHomeHealthcare.Models
         {
             return new ApplicationDbContext();
         }
-
-        public System.Data.Entity.DbSet<ExtendedHomeHealthcare.Models.Caregiver> Caregivers { get; set; }
-    }
+    }     
 }

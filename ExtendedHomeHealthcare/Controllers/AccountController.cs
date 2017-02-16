@@ -17,9 +17,11 @@ namespace ExtendedHomeHealthcare.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext _context;
 
         public AccountController()
         {
+            _context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -79,7 +81,7 @@ namespace ExtendedHomeHealthcare.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Caregiver", "Home");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -134,15 +136,19 @@ namespace ExtendedHomeHealthcare.Controllers
             }
         }
 
-        //
-        // GET: /Account/Register
-        [AllowAnonymous]
+        //GET: /Account/Register
+       [AllowAnonymous]
         public ActionResult Register()
         {
+            //var city = _context.
+            //return View();
+            //ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            //ViewBag.UserName = new SelectList(context.Users.ToList(), "UserName", "UserName");
             return View();
+
         }
 
-        //
+
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -151,7 +157,11 @@ namespace ExtendedHomeHealthcare.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser {
+                    UserName = model.Email,
+                    Email = model.Email,
+
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -171,6 +181,32 @@ namespace ExtendedHomeHealthcare.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+        //[AllowAnonymous]
+        //[HttpGet]
+        //public ActionResult RegisterRole()
+        //{
+        //    ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+        //    ViewBag.UserName = new SelectList(context.Users.ToList(), "UserName", "UserName");
+        //    return View();
+        //}
+
+        //// POST: Account/Register
+        //[HttpGet]
+        //[AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> RegisterRole(RegisterViewModel model, ApplicationUser user)
+        //{
+        //    var userid = context.User.Where(i => i.UserName == userName).Select(s => s.Id);
+        //    string updateId = "";
+        //    foreach (var i in userid)
+        //    {
+        //        updateId = i.ToString();
+            
+        //    }
+        //    // Assign Role to user
+        //    await this.UserManager.AddToRoleAsync(updateId, model.Name);
+        //    return RedirectToAction("Index", "Home");
+        //}
 
         //
         // GET: /Account/ConfirmEmail
@@ -426,6 +462,7 @@ namespace ExtendedHomeHealthcare.Controllers
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
+        private object context;
 
         private IAuthenticationManager AuthenticationManager
         {

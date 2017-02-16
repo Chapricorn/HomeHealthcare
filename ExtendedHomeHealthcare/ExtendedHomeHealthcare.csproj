@@ -44,6 +44,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Cronofy, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cronofy.0.4.0\lib\net35\Cronofy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.21.0\lib\net45\Google.Apis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.21.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.21.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Calendar.v3, Version=1.21.0.768, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Calendar.v3.1.21.0.768\lib\net45\Google.Apis.Calendar.v3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.21.0\lib\net45\Google.Apis.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.21.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -77,6 +113,18 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcSchedule, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcSchedule.1.0.0.2\lib\net40\MvcSchedule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Quartz, Version=2.4.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.4.1\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -138,11 +186,12 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, PublicKeyToken=431cba815f6a8b5b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -206,33 +255,21 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CalendarController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702132311200_adding caregiver.cs" />
-    <Compile Include="Migrations\201702132311200_adding caregiver.Designer.cs">
-      <DependentUpon>201702132311200_adding caregiver.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702132314030_adding city.cs" />
-    <Compile Include="Migrations\201702132314030_adding city.Designer.cs">
-      <DependentUpon>201702132314030_adding city.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702132316220_adding State.cs" />
-    <Compile Include="Migrations\201702132316220_adding State.Designer.cs">
-      <DependentUpon>201702132316220_adding State.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702132335241_adding user.cs" />
-    <Compile Include="Migrations\201702132335241_adding user.Designer.cs">
-      <DependentUpon>201702132335241_adding user.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702132336580_adding zipcode.cs" />
-    <Compile Include="Migrations\201702132336580_adding zipcode.Designer.cs">
-      <DependentUpon>201702132336580_adding zipcode.cs</DependentUpon>
+    <Compile Include="Migrations\201702161455541_adding user.cs" />
+    <Compile Include="Migrations\201702161455541_adding user.Designer.cs">
+      <DependentUpon>201702161455541_adding user.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CalendarEvent.cs" />
+    <Compile Include="Models\CalendarView.cs" />
     <Compile Include="Models\Caregiver.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -246,6 +283,58 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\FrontPageStyle\bootstrap.css" />
+    <Content Include="Content\FrontPageStyle\bootstrap.min.css" />
+    <Content Include="Content\FrontPageStyle\stylish-portfolio.css" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\image\back1.png" />
+    <Content Include="Content\image\bg.jpg" />
+    <Content Include="Content\image\dad.tif" />
+    <Content Include="Content\image\frontpage.tif" />
+    <Content Include="Content\image\fue%27s dad.tif" />
+    <Content Include="Content\image\fue%27s mom.tif" />
+    <Content Include="Content\image\Ginkgol_largeWeb.png" />
+    <Content Include="Content\image\Ginkologo_final_web.jpg" />
+    <Content Include="Content\image\grandma_daughter.jpg" />
+    <Content Include="Content\image\grandma_daughter.tif" />
+    <Content Include="Content\image\grandma_walker.tif" />
+    <Content Include="Content\image\logo.jpg" />
+    <Content Include="Content\image\photos_012111_.jpg" />
+    <Content Include="Content\image\photos_012111_3.jpg" />
+    <Content Include="Content\image\photos_012111_A.jpg" />
+    <Content Include="Content\image\photos_012111_A.tif" />
+    <Content Include="Content\image\photos_012111_Ab.jpg" />
+    <Content Include="Content\image\photos_012111_B.jpg" />
+    <Content Include="Content\image\photos_012111_B.tif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -255,15 +344,115 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="client_secret.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\image\Ginkologo_final-small - Copy.eps" />
+    <Content Include="Content\image\Ginkologo_final-small.pdf" />
+    <Content Include="Content\image\TimeSheet.pdf" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\FrontPageJS\bootstrap.js" />
+    <Content Include="Scripts\FrontPageJS\bootstrap.min.js" />
+    <Content Include="Scripts\FrontPageJS\jquery.js" />
+    <None Include="Scripts\jquery-1.11.3-vsdoc.js" />
+    <Content Include="Scripts\fullcalendar.js" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\gcal.js" />
+    <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\lib\cupertino\jquery-ui.min.css" />
+    <Content Include="Scripts\lib\jquery-ui.min.js" />
+    <Content Include="Scripts\lib\jquery.min.js" />
+    <Content Include="Scripts\lib\moment.min.js" />
+    <Content Include="Scripts\locale-all.js" />
+    <Content Include="Scripts\locale\ar-ma.js" />
+    <Content Include="Scripts\locale\ar-sa.js" />
+    <Content Include="Scripts\locale\ar-tn.js" />
+    <Content Include="Scripts\locale\ar.js" />
+    <Content Include="Scripts\locale\bg.js" />
+    <Content Include="Scripts\locale\ca.js" />
+    <Content Include="Scripts\locale\cs.js" />
+    <Content Include="Scripts\locale\da.js" />
+    <Content Include="Scripts\locale\de-at.js" />
+    <Content Include="Scripts\locale\de.js" />
+    <Content Include="Scripts\locale\el.js" />
+    <Content Include="Scripts\locale\en-au.js" />
+    <Content Include="Scripts\locale\en-ca.js" />
+    <Content Include="Scripts\locale\en-gb.js" />
+    <Content Include="Scripts\locale\en-ie.js" />
+    <Content Include="Scripts\locale\en-nz.js" />
+    <Content Include="Scripts\locale\es-do.js" />
+    <Content Include="Scripts\locale\es.js" />
+    <Content Include="Scripts\locale\eu.js" />
+    <Content Include="Scripts\locale\fa.js" />
+    <Content Include="Scripts\locale\fi.js" />
+    <Content Include="Scripts\locale\fr-ca.js" />
+    <Content Include="Scripts\locale\fr-ch.js" />
+    <Content Include="Scripts\locale\fr.js" />
+    <Content Include="Scripts\locale\gl.js" />
+    <Content Include="Scripts\locale\he.js" />
+    <Content Include="Scripts\locale\hi.js" />
+    <Content Include="Scripts\locale\hr.js" />
+    <Content Include="Scripts\locale\hu.js" />
+    <Content Include="Scripts\locale\id.js" />
+    <Content Include="Scripts\locale\is.js" />
+    <Content Include="Scripts\locale\it.js" />
+    <Content Include="Scripts\locale\ja.js" />
+    <Content Include="Scripts\locale\ko.js" />
+    <Content Include="Scripts\locale\lb.js" />
+    <Content Include="Scripts\locale\lt.js" />
+    <Content Include="Scripts\locale\lv.js" />
+    <Content Include="Scripts\locale\mk.js" />
+    <Content Include="Scripts\locale\ms-my.js" />
+    <Content Include="Scripts\locale\ms.js" />
+    <Content Include="Scripts\locale\nb.js" />
+    <Content Include="Scripts\locale\nl.js" />
+    <Content Include="Scripts\locale\nn.js" />
+    <Content Include="Scripts\locale\pl.js" />
+    <Content Include="Scripts\locale\pt-br.js" />
+    <Content Include="Scripts\locale\pt.js" />
+    <Content Include="Scripts\locale\ro.js" />
+    <Content Include="Scripts\locale\ru.js" />
+    <Content Include="Scripts\locale\sk.js" />
+    <Content Include="Scripts\locale\sl.js" />
+    <Content Include="Scripts\locale\sr-cyrl.js" />
+    <Content Include="Scripts\locale\sr.js" />
+    <Content Include="Scripts\locale\sv.js" />
+    <Content Include="Scripts\locale\th.js" />
+    <Content Include="Scripts\locale\tr.js" />
+    <Content Include="Scripts\locale\uk.js" />
+    <Content Include="Scripts\locale\vi.js" />
+    <Content Include="Scripts\locale\zh-cn.js" />
+    <Content Include="Scripts\locale\zh-tw.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -313,6 +502,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Calendar\" />
+    <Folder Include="Views\Events\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -320,23 +511,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702132311200_adding caregiver.resx">
-      <DependentUpon>201702132311200_adding caregiver.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702132314030_adding city.resx">
-      <DependentUpon>201702132314030_adding city.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702132316220_adding State.resx">
-      <DependentUpon>201702132316220_adding State.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702132335241_adding user.resx">
-      <DependentUpon>201702132335241_adding user.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702132336580_adding zipcode.resx">
-      <DependentUpon>201702132336580_adding zipcode.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702161455541_adding user.resx">
+      <DependentUpon>201702161455541_adding user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

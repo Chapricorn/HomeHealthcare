@@ -1,51 +1,56 @@
 ﻿
-<center>
-    @{
-    ViewBag.Title = "Contact";
-}
-<address>
-    <br />
-    <br />
-    <label for="name">Postal Address</label>
-    <p>
-        1234 N. 76th ST<br />
-        Milwaukee, WI 53218<br />
-        <abbr title="Phone">Phone:</abbr>
-        414.123.4567
-    </p>
-</address>
+<div class="container">
+   
+        @{
+            ViewBag.Title = "Contact";
+        }
+
+        <address>
+            <br /><br /><br /><br />
+ 
+                @{
+                    ViewBag.Title = "Postal Address";
+                }
+                <h2>@ViewBag.Title.</h2>
+                <p>
+                    1234 N. 76th ST<br />
+                    Milwaukee, WI 53218<br />
+                    <abbr title="Phone">Phone:</abbr>
+                    414.123.4567
+                </p>
+        </address>
+
+        <br /><br />
+       
+            <h2>Got Questions? <small>Feel free to contact us</small></h2>
+
+            <form action="mailto:123@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Your Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <div class="input-group">
+                    </div>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" />
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Your Message</label>
+                    <textarea name="message" id="message" class="form-control" required="required" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="btnContactUs">Send Message</button>
+            </form>
+            <br /><br />
+
+            If you have a questions that requires immediate answers, we can be reached at 414-123-4567
 
 
-<h2>Got Questions? <small>Feel free to contact us</small></h2>
+            <address>
+                <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+                <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+            </address>
 
-<form action="mailto:bengcha91@gmail.com" method="post" enctype="text/plain">
-    <div class="form-group">
-        <label for="name">Your Full Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
-    </div>
-
-    <div class="form-group">
-        <label for="email">Your Email Address</label>
-        <div class="input-group">
-        </div>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" />
-    </div>
-
-
-
-    <div class="form-group">
-        <label for="name">Your Message</label>
-        <textarea name="message" id="message" class="form-control" required="required" placeholder="Message"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary" id="btnContactUs">Send Message</button>
-</form>
-<br /><br />
-
-    If you have a questions that requires immediate answers, we can be reached at 414-123-4567
-
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
-</center>
+</div>

@@ -80,6 +80,19 @@ namespace ExtendedHomeHealthcare.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "City")]
+        public int CityId { get; set; }
+
+        [Display(Name ="State")]
+        public int StateId { get; set; }
+
+        [Display(Name = "ZipCode")]
+        public int ZipCodeId { get; set; }
+
+        IEnumerable<City> CityList { get; set; }
+        IEnumerable<State> StateList { get; set; }
+        IEnumerable<ZipCode> ZipCodeList { get; set; }
     }
 
     public class ResetPasswordViewModel
