@@ -33,7 +33,7 @@ namespace ExtendedHomeHealthcare.Controllers
 
             return View();
         }
-        public ActionResult Events()
+        public ActionResult Gallery()
         {
             ViewBag.Message = "Your contact page.";
 
