@@ -1,8 +1,12 @@
-﻿using System;
+﻿using ExtendedHomeHealthcare.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml.Linq;
 
 namespace ExtendedHomeHealthcare.Controllers
 {
@@ -17,33 +21,44 @@ namespace ExtendedHomeHealthcare.Controllers
         // GET /home/about
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your about page.";
 
             return View();
         }
         public ActionResult Services()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your service page.";
 
             return View();
         }
         public ActionResult Employment()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your employment page.";
 
             return View();
         }
         public ActionResult Gallery()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your gallery page.";
 
             return View();
         }
+
+
+
+        //[HttpGet]
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
+
+
         //[Authorize(Roles = "Admin")]
         [Authorize]
         public ActionResult Caregiver()
         {
-            ViewBag.Message = "Your contact page.";
+
+            ViewBag.Message = "Your caregiver page.";
 
             return View();
         }
@@ -54,6 +69,8 @@ namespace ExtendedHomeHealthcare.Controllers
 
             return View();
         }
+     
 
     }
+    
 }

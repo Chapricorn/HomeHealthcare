@@ -204,6 +204,14 @@
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Xero.Api, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xero.API.SDK.Minimal.2.2.1.1\lib\net40\Xero.Api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xero.Api.Example.Applications, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xero.API.SDK.Minimal.2.2.1.1\lib\net40\Xero.Api.Example.Applications.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, PublicKeyToken=431cba815f6a8b5b, processorArchitecture=MSIL">
       <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
       <Private>True</Private>
@@ -273,12 +281,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Context\PatientContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
+    <Compile Include="Controllers\CaregiverController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\List.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PatientsController.cs" />
+    <Compile Include="Controllers\Prediction.cs" />
+    <Compile Include="Controllers\RootObject.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -286,15 +300,18 @@
     <Compile Include="Migrations\201702161947456_adding users.Designer.cs">
       <DependentUpon>201702161947456_adding users.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702211954250_adding patient.cs" />
+    <Compile Include="Migrations\201702211954250_adding patient.Designer.cs">
+      <DependentUpon>201702211954250_adding patient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CalendarEvent.cs" />
-    <Compile Include="Models\CalendarView.cs" />
     <Compile Include="Models\Caregiver.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ZipCode.cs" />
@@ -406,6 +423,9 @@
     <Content Include="client_secret.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\image\employment-application.pdf" />
+    <Content Include="Content\image\Patient Enrollment.pdf" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\FrontPageJS\bootstrap.js" />
     <Content Include="Scripts\FrontPageJS\bootstrap.min.js" />
@@ -520,7 +540,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -558,6 +580,11 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Patients\Create.cshtml" />
+    <Content Include="Views\Patients\Delete.cshtml" />
+    <Content Include="Views\Patients\Details.cshtml" />
+    <Content Include="Views\Patients\Edit.cshtml" />
+    <Content Include="Views\Patients\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -565,7 +592,8 @@
     <Folder Include="Content\jQuery\images\" />
     <Folder Include="fonts\" />
     <Folder Include="Views\Calendar\" />
-    <Folder Include="Views\Events\" />
+    <Folder Include="Views\Caregiver\" />
+    <Folder Include="Views\Edit\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -574,6 +602,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702161947456_adding users.resx">
       <DependentUpon>201702161947456_adding users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702211954250_adding patient.resx">
+      <DependentUpon>201702211954250_adding patient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

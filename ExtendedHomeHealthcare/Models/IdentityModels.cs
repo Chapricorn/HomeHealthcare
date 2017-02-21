@@ -25,8 +25,9 @@ namespace ExtendedHomeHealthcare.Models
         DbSet<City> city { get; set; }
         DbSet<State> state { get; set; }
         DbSet<ZipCode> zipcode { get; set; }
+        DbSet<Patient> patients { get; set; }
         public ApplicationDbContext()
-            //: base("DefaultConnection", throwIfV1Schema: false)
+        : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
@@ -34,5 +35,7 @@ namespace ExtendedHomeHealthcare.Models
         {
             return new ApplicationDbContext();
         }
+
+     
     }     
 }

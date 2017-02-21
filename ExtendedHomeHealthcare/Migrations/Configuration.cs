@@ -9,7 +9,7 @@ namespace ExtendedHomeHealthcare.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(ExtendedHomeHealthcare.Models.ApplicationDbContext context)
