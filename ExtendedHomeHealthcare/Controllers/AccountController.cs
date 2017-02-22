@@ -166,7 +166,14 @@ namespace ExtendedHomeHealthcare.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    //UserManager.AddToRole(user.Id, "Candidate");
+
+                    ////await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //codeType = "EmailConfirmation";
+                    //await SendEmail("Confirmation", "Account", user, model.RegisterEmail, "WelcomeEmail", "Confirm your account");
+
+                    //return RedirectToAction("ConfirmationEmailSent", "Account");
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -181,16 +188,8 @@ namespace ExtendedHomeHealthcare.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-        //[AllowAnonymous]
-        //[HttpGet]
-        //public ActionResult RegisterRole()
-        //{
-        //    ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
-        //    ViewBag.UserName = new SelectList(context.Users.ToList(), "UserName", "UserName");
-        //    return View();
-        //}
 
-        //// POST: Account/Register
+        // POST: Account/Register
         //[HttpGet]
         //[AllowAnonymous]
         //[ValidateAntiForgeryToken]
@@ -201,14 +200,14 @@ namespace ExtendedHomeHealthcare.Controllers
         //    foreach (var i in userid)
         //    {
         //        updateId = i.ToString();
-            
+
         //    }
-        //    // Assign Role to user
+        //    Assign Role to user
         //    await this.UserManager.AddToRoleAsync(updateId, model.Name);
         //    return RedirectToAction("Index", "Home");
         //}
 
-        //
+
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)

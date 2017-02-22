@@ -274,6 +274,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Globaliz\Resource1.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -281,7 +282,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Context.cs" />
     <Compile Include="Context\PatientContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
@@ -300,9 +300,9 @@
     <Compile Include="Migrations\201702161947456_adding users.Designer.cs">
       <DependentUpon>201702161947456_adding users.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702211954250_adding patient.cs" />
-    <Compile Include="Migrations\201702211954250_adding patient.Designer.cs">
-      <DependentUpon>201702211954250_adding patient.cs</DependentUpon>
+    <Compile Include="Migrations\201702212227513_adding patient.cs" />
+    <Compile Include="Migrations\201702212227513_adding patient.Designer.cs">
+      <DependentUpon>201702212227513_adding patient.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -315,6 +315,7 @@
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\ZipCode.cs" />
+    <Compile Include="PatientContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -331,25 +332,20 @@
     <Content Include="Content\fullcalendar.css" />
     <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\fullcalendar.print.css" />
-    <Content Include="Content\image\back1.png" />
     <Content Include="Content\image\bg.jpg" />
-    <Content Include="Content\image\dad.tif" />
-    <Content Include="Content\image\frontpage.tif" />
-    <Content Include="Content\image\fue%27s dad.tif" />
-    <Content Include="Content\image\fue%27s mom.tif" />
+    <Content Include="Content\image\dad.jpg" />
+    <Content Include="Content\image\fue_s_dad.jpg" />
+    <Content Include="Content\image\fue_s_mom.jpg" />
     <Content Include="Content\image\Ginkgol_largeWeb.png" />
     <Content Include="Content\image\Ginkologo_final_web.jpg" />
     <Content Include="Content\image\grandma_daughter.jpg" />
-    <Content Include="Content\image\grandma_daughter.tif" />
-    <Content Include="Content\image\grandma_walker.tif" />
+    <Content Include="Content\image\grandma_walker.jpg" />
     <Content Include="Content\image\logo.jpg" />
     <Content Include="Content\image\photos_012111_.jpg" />
     <Content Include="Content\image\photos_012111_3.jpg" />
     <Content Include="Content\image\photos_012111_A.jpg" />
-    <Content Include="Content\image\photos_012111_A.tif" />
     <Content Include="Content\image\photos_012111_Ab.jpg" />
     <Content Include="Content\image\photos_012111_B.jpg" />
-    <Content Include="Content\image\photos_012111_B.tif" />
     <Content Include="Content\jQuery\AUTHORS.txt" />
     <Content Include="Content\jQuery\index.html" />
     <Content Include="Content\jQuery\jquery-ui.css" />
@@ -410,7 +406,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\image\Ginkologo_final-small - Copy.eps" />
     <Content Include="Content\image\Ginkologo_final-small.pdf" />
     <Content Include="Content\image\TimeSheet.pdf" />
     <Content Include="Content\bootstrap.min.css.map" />
@@ -424,8 +419,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\image\employment-application.pdf" />
-    <Content Include="Content\image\Patient Enrollment.pdf" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="Content\image\PatientForm.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\FrontPageJS\bootstrap.js" />
     <Content Include="Scripts\FrontPageJS\bootstrap.min.js" />
@@ -603,8 +598,8 @@
     <EmbeddedResource Include="Migrations\201702161947456_adding users.resx">
       <DependentUpon>201702161947456_adding users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702211954250_adding patient.resx">
-      <DependentUpon>201702211954250_adding patient.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702212227513_adding patient.resx">
+      <DependentUpon>201702212227513_adding patient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

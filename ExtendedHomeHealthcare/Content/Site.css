@@ -61,3 +61,8 @@ select option{width:255px;}
          }
    .selectBox{width:295px;height:38px;padding: 0 0 0 9px;}  
 select option{width:255px;}  
+
+.form-control
+{
+    width: 250px;
+}

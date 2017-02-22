@@ -1,5 +1,8 @@
 namespace ExtendedHomeHealthcare.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +29,26 @@ namespace ExtendedHomeHealthcare.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            //    context.Roles.AddOrUpdate(r => r.Name,
+            //        new IdentityRole { Name = "Admin" },
+            //        new IdentityRole { Name = "Caregiver" }
+            //        );
+            //}
+
+            var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            string[] roleNames = { "Admin", "Caregiver", "User" };
+            IdentityResult roleResult;
+            foreach (var roleName in roleNames)
+            {
+                if (!RoleManager.RoleExists(roleName))
+                {
+                    roleResult = RoleManager.Create(new IdentityRole(roleName));
+                }
+            }
+
+
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            UserManager.AddToRole("c1cbdf17-14c8-4a8e-92e2-091edd056286", "Admin");
         }
     }
 }

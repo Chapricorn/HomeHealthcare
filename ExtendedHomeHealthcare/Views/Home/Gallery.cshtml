@@ -1,21 +1,69 @@
 ﻿<br /><br /><br /><br />
 <div class="container">
     <center><img src="~/Content/image/Ginkologo_final_web.jpg" /></center>
-    <br /><br />
     @{
         ViewBag.Title = "Gallery";
     }
 
-    <h2>Gallery</h2>
+    <style type="text/css">
+        body {
+            margin-top: 20px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
 
-<img src="~/Content/image/photos_012111_.jpg" />
-  
-    <img src="~/Content/image/grandma_daughter.jpg" />
-   <img src="~/Content/image/photos_012111_3.jpg" />
-    <img src="~/Content/image/photos_012111_B.jpg" />
-  <img src="~/Content/image/fue's dad.tif" />
+        a {
+            color: #FFF;
+        }
+
+            a:hover {
+                color: yellow;
+                text-decoration: underline;
+            }
+
+        .thumbnails img {
+            height: 70px;
+            border: 4px solid #555;
+            padding: 1px;
+            margin: 0 10px 10px 0;
+        }
+
+            .thumbnails img:hover {
+                border: 4px solid red;
+                cursor: pointer;
+            }
+
+        .preview img {
+            border: 4px solid #444;
+            padding: 1px;
+            width: 1000px;
+        }
+    </style>
 
 
+    <div class="gallery" align="center">
+        <br />
 
+        <div class="thumbnails">
+            <img onmouseover="preview.src=img1.src" name="img1" src="~/Content/image/grandma_daughter.jpg" alt="" />
+            <img onmouseover="preview.src=img2.src" name="img2" src="~/Content/image/photos_012111_.jpg" alt="" />
+            <img onmouseover="preview.src=img3.src" name="img3" src="~/Content/image/photos_012111_3.jpg" alt="" />
+            <img onmouseover="preview.src=img4.src" name="img4" src="~/Content/image/photos_012111_B.jpg" alt="" />
+            <img onmouseover="preview.src=img5.src" name="img5" src="~/Content/image/photos_012111_Ab.jpg" alt="" />
+            <img onmouseover="preview.src=img6.src" name="img6" src="~/Content/image/fue_s_dad.jpg" alt="" />
+            <img onmouseover="preview.src=img7.src" name="img7" src="~/Content/image/fue_s_mom.jpg" alt="" />
+            <img onmouseover="preview.src=img8.src" name="img8" src="~/Content/image/grandma_walker.jpg" alt="" />
+        </div><br />
+
+        <div class="preview" align="center">
+            <img name="preview" src="images/img1.jpg" alt="" />
+        </div>
+
+    </div>
 
 </div>
+
+<footer>
+    <center>
+        <p>&copy; @DateTime.Now.Year - United Extended Home Healthcare</p>
+    </center>
+</footer>

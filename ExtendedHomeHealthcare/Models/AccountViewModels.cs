@@ -93,6 +93,7 @@ namespace ExtendedHomeHealthcare.Models
         IEnumerable<City> CityList { get; set; }
         IEnumerable<State> StateList { get; set; }
         IEnumerable<ZipCode> ZipCodeList { get; set; }
+        public object RegisterEmail { get; internal set; }
     }
 
     public class ResetPasswordViewModel

@@ -84,23 +84,15 @@
                 @Html.DisplayFor(model => model.Email)
             </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.PhoneNumber)
-            </dd>
-
         </dl>
     </div>
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
-    </div>
-    <footer>
-        <center>
-            <p>&copy; @DateTime.Now.Year - United Extended Home Healthcare</p>
-        </center>
-    </footer>
+</div>
+<footer>
+    <center>
+        <p>&copy; @DateTime.Now.Year - United Extended Home Healthcare</p>
+    </center>
+</footer>

@@ -1,7 +1,6 @@
 ﻿<link href="~/Content/FrontPageStyle/bootstrap.min.css" rel="stylesheet">
-
-
 <link href="~/Content/FrontPageStyle/stylish-portfolio.css" rel="stylesheet">
+<link href="~/Content/Site.css" rel="stylesheet" />
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
@@ -15,7 +14,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("United Extended Home Healthcare", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Home Healthcare", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 @if (Request.IsAuthenticated)
 {
@@ -56,8 +55,6 @@ else
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-                  @*</div>
-              </div>*@
 
     
 </body>

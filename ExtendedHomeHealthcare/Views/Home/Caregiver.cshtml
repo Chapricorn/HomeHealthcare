@@ -2,13 +2,12 @@
                               <br /><br /><br /><br />
 <div class="container">
     <center><img src="~/Content/image/Ginkologo_final_web.jpg" /></center>
-    <br /><br />
     @{
         ViewBag.Title = "Caregiver";
 
     }
 
-    <h2>Caregiver</h2>
+    <h2>Welcome Back Caregivers</h2>
 
 
 
@@ -25,138 +24,11 @@
     <strong>Weekly Time Sheets</strong>
     <p><a href="~/Content/image/TimeSheet.pdf" value="Resume"> Personal Care Worker (PCW) Time Sheet </a></p>
     <strong>New Patients Enrollment</strong>
-    <p><a href="~/Content/image/TimeSheet.pdf" value="Resume"> New Patient Form</a></p>
-
-    @*<center><img src="~/Content/image/photos_012111_.jpg" /></center>*@
-
-    <br /><br />
-
-    @*@model ExtendedHomeHealthcare.Models.Venue
-
-    <script src="~/Scripts/jquery-2.2.3.js"></script>
-    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
-    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
-    <script src="~/Scripts/jquery.validate.js"></script>
-    <div class="row">
-        <div class="col-md-8">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", id = "TextBoxVenueLocation" })
-                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
-                    @Html.HiddenFor(m => m.Id, new { @id = "EventVenueId" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.City, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.City, new { @class = "form-control", id = "TextBoxCity" })
-                    @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
-                </div>
-            </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.State, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.State, new { @class = "form-control", id = "TextBoxState" })
-                        @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })
-                    </div>
-                </div>*@
-                @*<div class="form-group">
-            @Html.LabelFor(m => m.Country, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(m => m.CountryCode, new SelectList(Model.Countries, "CountryCode", "CountryName"), "Choose Country", new { @class = "selectBox form-control ", @id = "DropDownListCounties" })
-                @Html.HiddenFor(m => m.CountryName, new { @id = "HdnCountryName" })
-                @Html.ValidationMessageFor(m => m.Country, "", new { @class = "text-danger" })
-            </div>*
-            </div>*@
-            @*<div class="form-group">
-                @Html.LabelFor(m => m.ZipCode, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control", id = "TextBoxZipCode", maxlength = 6 })
-                    @Html.ValidationMessageFor(m => m.ZipCode, "", new { @class = "text-danger" })
-                </div>         
-            </div>
-            @Html.HiddenFor(m => m.Latitude, new { @id = "EventVenueLatitude" })
-            @Html.HiddenFor(m => m.Longitude, new { @id = "EventVenueLongitude" })
-        </div>
-       
-      
-    </div>
-</div>*@  
-
-
+    <p><a href="~/Content/image/PatientForm.pdf" value="Resume"> New Patient Form</a></p>
 
 <br /><br /><br /><br />
 
-  <center>
-    <style>
-        #map {
-            height: 300px;
-            width: 50%;
-        }
-    </style>
-
-    <div id="floating-panel">
-        <b>Start: </b>
-        <select id="start">
-            <option value="1234 N. 76th ST Milwaukee, WI 53218">Current Location</option>
-        </select>
-        <b>End: </b>
-        <select id="end">
-            @*@{int i = 1;}
-            @foreach (var patient in Model)
-            {
-
-                <option value="@patient.StreetName, @patient.StreetName2 , @patient.ZipCode">@i @patient.LastName </option>
-                i++;
-
-            }
-            <option value="1234 N. 76th ST">Extended United Home Healthcare</option>*@
-            <option value="">Destination</option>
-            <option value="142 W Wisconsin Ave, Milwaukee, WI 53203">Moes Irish Pub</option>
-            <option value="2060 N Humboldt Blvd #1, Milwaukee, WI 53212">Stubby's</option>
-            <option value="2022 E North Ave, Milwaukee, WI 53202">BBC</option>
-        </select>
-    </div>
-    <div id="map"></div>
-    <script>
-        function initMap() {
-            var directionsService = new google.maps.DirectionsService;
-            var directionsDisplay = new google.maps.DirectionsRenderer;
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 9,
-                center: { lat: 43.0389, lng: -87.9065 }
-            });
-            directionsDisplay.setMap(map);
-
-            var onChangeHandler = function () {
-                calculateAndDisplayRoute(directionsService, directionsDisplay);
-            };
-            document.getElementById('start').addEventListener('change', onChangeHandler);
-            document.getElementById('end').addEventListener('change', onChangeHandler);
-        }
-
-        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-            directionsService.route({
-                origin: document.getElementById('start').value,
-                destination: document.getElementById('end').value,
-                travelMode: 'DRIVING'
-            }, function (response, status) {
-                if (status === 'OK') {
-                    directionsDisplay.setDirections(response);
-                } else {
-                    window.alert('Directions request failed due to ' + status);
-                }
-            });
-        }
-    </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUo7yxQcCkBnryWfkSN1tnd5C_ptUpm8Y&callback=initMap">
-    </script>
-
-
-</center> 
+  
 
 </div>
 

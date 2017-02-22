@@ -7,7 +7,7 @@ namespace ExtendedHomeHealthcare.Models
 {
     public class Patient
     {
-         public string Id { get; set; }
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
@@ -17,6 +17,5 @@ namespace ExtendedHomeHealthcare.Models
         public string State { get; set; }
         public string ZipCode { get; set; }
         public string Email { get; set; }
-        public int PhoneNumber { get; set; }
     }
 }

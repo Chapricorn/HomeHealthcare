@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using ExtendedHomeHealthcare;
 using ExtendedHomeHealthcare.Models;
-using ExtendedHomeHealthcare.Context;
 
 namespace ExtendedHomeHealthcare.Controllers
 {
@@ -48,7 +47,7 @@ namespace ExtendedHomeHealthcare.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Age,StreetName,StreetName2,City,State,ZipCode,Email,PhoneNumber")] Patient patient)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Age,StreetName,StreetName2,City,State,ZipCode,Email")] Patient patient)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +79,7 @@ namespace ExtendedHomeHealthcare.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Age,StreetName,StreetName2,City,State,ZipCode,Email,PhoneNumber")] Patient patient)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Age,StreetName,StreetName2,City,State,ZipCode,Email")] Patient patient)
         {
             if (ModelState.IsValid)
             {
