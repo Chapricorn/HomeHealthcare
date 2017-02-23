@@ -22,7 +22,7 @@ namespace ExtendedHomeHealthcare.Controllers
         }
 
         // GET: Patients/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
