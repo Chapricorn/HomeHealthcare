@@ -60,7 +60,7 @@ namespace ExtendedHomeHealthcare.Controllers
         }
 
         // GET: Patients/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {
@@ -91,7 +91,7 @@ namespace ExtendedHomeHealthcare.Controllers
         }
 
         // GET: Patients/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
             if (id == null)
             {
@@ -108,7 +108,7 @@ namespace ExtendedHomeHealthcare.Controllers
         // POST: Patients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Patient patient = db.Patients.Find(id);
             db.Patients.Remove(patient);

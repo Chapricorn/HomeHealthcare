@@ -296,13 +296,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702161947456_adding users.cs" />
-    <Compile Include="Migrations\201702161947456_adding users.Designer.cs">
-      <DependentUpon>201702161947456_adding users.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702212227513_adding patient.cs" />
-    <Compile Include="Migrations\201702212227513_adding patient.Designer.cs">
-      <DependentUpon>201702212227513_adding patient.cs</DependentUpon>
+    <Compile Include="Migrations\201702231449298_initialmigration.cs" />
+    <Compile Include="Migrations\201702231449298_initialmigration.Designer.cs">
+      <DependentUpon>201702231449298_initialmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -595,11 +591,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702161947456_adding users.resx">
-      <DependentUpon>201702161947456_adding users.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702212227513_adding patient.resx">
-      <DependentUpon>201702212227513_adding patient.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702231449298_initialmigration.resx">
+      <DependentUpon>201702231449298_initialmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
