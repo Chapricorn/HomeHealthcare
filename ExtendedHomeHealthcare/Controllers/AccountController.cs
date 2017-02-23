@@ -19,6 +19,32 @@ namespace ExtendedHomeHealthcare.Controllers
         private ApplicationUserManager _userManager;
         private ApplicationDbContext _context;
 
+
+
+
+        //[Authorize(Roles = "Admin")]
+        //public ActionResult RoleCreate()
+        //{
+        //    return View();
+        //}
+
+        //[Authorize(Roles = "Admin")]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult RoleCreate(string RoleName)
+        //{
+
+        //    Roles.CreateRole(Request.Form["RoleName"]);
+        //    // ViewBag.ResultMessage = "Role created successfully !";
+
+        //    return RedirectToAction("RoleIndex", "Account");
+        //}
+
+
+
+
+
+
         public AccountController()
         {
             _context = new ApplicationDbContext();
@@ -59,7 +85,16 @@ namespace ExtendedHomeHealthcare.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
+            //ViewBag.ReturnUrl = returnUrl;
+            //return View();
+
+
+            // This prevents user to relog-in if already logged in
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Caregiver", "Home");
+            }
+            ViewBag.ReturnUrl = returnUrl ?? Url.Action("Caregiver", "Home");
             return View();
         }
 
