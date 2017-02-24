@@ -304,6 +304,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Caregiver.cs" />
     <Compile Include="Models\City.cs" />
+    <Compile Include="Models\EmailModel.cs" />
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -576,6 +577,7 @@
     <Content Include="Views\Patients\Details.cshtml" />
     <Content Include="Views\Patients\Edit.cshtml" />
     <Content Include="Views\Patients\Index.cshtml" />
+    <Content Include="Views\Home\Sent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
