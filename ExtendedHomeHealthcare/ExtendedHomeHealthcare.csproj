@@ -330,6 +330,8 @@
     <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\image\bg.jpg" />
+    <Content Include="Content\image\cloud.jpg" />
+    <Content Include="Content\image\clouds.jpg" />
     <Content Include="Content\image\dad.jpg" />
     <Content Include="Content\image\fue_s_dad.jpg" />
     <Content Include="Content\image\fue_s_mom.jpg" />
