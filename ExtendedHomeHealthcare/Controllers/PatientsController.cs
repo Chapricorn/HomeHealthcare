@@ -20,8 +20,12 @@ namespace ExtendedHomeHealthcare.Controllers
         {
             return View(db.Patients.ToList());
         }
-
+        public ActionResult Map()
+        {
+            return View(db.Patients.ToList());
+        }
         // GET: Patients/Details/5
+
         public ActionResult Details(int id)
         {
             if (id == null)

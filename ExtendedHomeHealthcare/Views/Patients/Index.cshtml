@@ -1,97 +1,84 @@
 ﻿@model IEnumerable<ExtendedHomeHealthcare.Models.Patient>
-@{
-    ViewBag.Title = "Route";
-}
+<div class="container">
 
-
-<style>
-    #map {
-        height: 400px;
-        width: 100%;
-        margin-top:250px;
+    <center><img src="~/Content/image/Ginkologo_final_web.jpg" /></center>
+    @{
+        ViewBag.Title = "Index";
     }
-</style>
+    <h2>Register New Patients</h2>
 
-
-<div id="map"></div>
-
-<script>
-     function initMap() {
-       var directionsService = new google.maps.DirectionsService;
-       var directionsDisplay = new google.maps.DirectionsRenderer;
-       var map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 16,
-         center: { lat: 43.034134, lng: -87.911953 }
-       });
-       directionsDisplay.setMap(map);
-
-       document.getElementById('submit').addEventListener('click', function() {
-         calculateAndDisplayRoute(directionsService, directionsDisplay);
-       });
-     }
-     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-
-
-       directionsService.route({
-         origin: document.getElementById('start').value,
-         destination: document.getElementById('end').value,
-         //waypoints: waypts,
-         //optimizeWaypoints: true,
-         travelMode: 'DRIVING'
-       }, function(response, status) {
-         if (status === 'OK') {
-           directionsDisplay.setDirections(response);
-           var route = response.routes[0];
-           var summaryPanel = document.getElementById('directions-panel');
-           summaryPanel.innerHTML = '';
-           // For each route, display summary information.
-
-         } else {
-           window.alert('Directions request failed due to ' + status);
-         }
-       });
-     }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUo7yxQcCkBnryWfkSN1tnd5C_ptUpm8Y&callback=initMap">
-</script>
-
-
-<center>
-    <h3>Patients Route</h3>
-
-<div id="right-panel">
-    <div>
-        <b>Start Location:</b>
-        <select id="start">
-            <option value="6300 N 76th Street, 53218">Extended Home Health Care </option>
-        </select>
-
-        <b>Patients:</b>
-        <select id="end">
-            @{int i = 1;}
-            @foreach (var Patients in Model)
-            {
-
-                <option value="@Patients.StreetName,@Patients.ZipCode">@i @Patients.LastName </option>
-                i++;
-
-            }
-            <option value="333 N Plankinton Ave, 53203">GYJ Enterprise HQ</option>
-            >
-        </select>
-        <input type="submit" id="submit">
-    </div>
-    <div id="directions-panel"></div>
-</div>
-    </center>
-
-
-
-
-
-<footer>
     <center>
-        <p>&copy; @DateTime.Now.Year - United Extended Home Healthcare</p>
+        <p>
+            @Html.ActionLink("Click here to Register New Patients ", "Create")
+        </p>
     </center>
-</footer>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StreetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StreetName2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StreetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StreetName2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

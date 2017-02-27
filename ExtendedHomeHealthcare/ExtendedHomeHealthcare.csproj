@@ -72,8 +72,8 @@
       <HintPath>..\packages\Google.Apis.Auth.1.21.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Google.Apis.Calendar.v3, Version=1.21.0.773, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Calendar.v3.1.21.0.773\lib\net45\Google.Apis.Calendar.v3.dll</HintPath>
+    <Reference Include="Google.Apis.Calendar.v3, Version=1.21.0.780, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Calendar.v3.1.21.0.780\lib\net45\Google.Apis.Calendar.v3.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Google.Apis.Core, Version=1.21.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
@@ -137,8 +137,8 @@
       <HintPath>..\packages\MvcSchedule.1.0.0.2\lib\net40\MvcSchedule.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.2-beta2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Quartz, Version=3.0.0.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
@@ -296,9 +296,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702231449298_initialmigration.cs" />
-    <Compile Include="Migrations\201702231449298_initialmigration.Designer.cs">
-      <DependentUpon>201702231449298_initialmigration.cs</DependentUpon>
+    <Compile Include="Migrations\201702271658261_adding database.cs" />
+    <Compile Include="Migrations\201702271658261_adding database.Designer.cs">
+      <DependentUpon>201702271658261_adding database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -323,6 +323,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\calendar\fullcalendar.min.css" />
+    <Content Include="Content\calendar\fullcalendar.print.min.css" />
     <Content Include="Content\FrontPageStyle\bootstrap.css" />
     <Content Include="Content\FrontPageStyle\bootstrap.min.css" />
     <Content Include="Content\FrontPageStyle\stylish-portfolio.css" />
@@ -421,6 +423,9 @@
     <Content Include="ClassDiagram1.cd" />
     <Content Include="Content\image\PatientForm.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\calendar\fullcalendar.min.js" />
+    <Content Include="Scripts\calendar\jquery.min.js" />
+    <Content Include="Scripts\calendar\moment.min.js" />
     <Content Include="Scripts\FrontPageJS\bootstrap.js" />
     <Content Include="Scripts\FrontPageJS\bootstrap.min.js" />
     <Content Include="Scripts\FrontPageJS\jquery.js" />
@@ -578,8 +583,10 @@
     <Content Include="Views\Patients\Delete.cshtml" />
     <Content Include="Views\Patients\Details.cshtml" />
     <Content Include="Views\Patients\Edit.cshtml" />
-    <Content Include="Views\Patients\Index.cshtml" />
+    <Content Include="Views\Patients\Map.cshtml" />
     <Content Include="Views\Home\Sent.cshtml" />
+    <Content Include="Views\Patients\Index.cshtml" />
+    <Content Include="Views\Home\Calendar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -595,8 +602,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702231449298_initialmigration.resx">
-      <DependentUpon>201702231449298_initialmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702271658261_adding database.resx">
+      <DependentUpon>201702271658261_adding database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -107,6 +107,14 @@ namespace ExtendedHomeHealthcare.Controllers
         {
             return View();
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        public ActionResult Calendar()
+        {
+            return View();
+        }
 
     }
     

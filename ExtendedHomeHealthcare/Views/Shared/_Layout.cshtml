@@ -2,9 +2,8 @@
 <link href="~/Content/FrontPageStyle/stylish-portfolio.css" rel="stylesheet">
 <link href="~/Content/Site.css" rel="stylesheet" />
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-
+<div id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -16,8 +15,7 @@
                 </button>
                 @Html.ActionLink("Home Healthcare", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-@if (Request.IsAuthenticated)
-{
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                  
@@ -25,36 +23,24 @@
                     <li>@Html.ActionLink("Services", "Services", "Home")</li>
                     <li>@Html.ActionLink("Employment", "Employment", "Home")</li>
                     <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
-                    <li>@Html.ActionLink("Caregiver", "Caregiver", "Home")</li>
-                    <li>@Html.ActionLink("Patients", "Index", "Patients")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
 }
-else
-{
-     <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Services", "Services", "Home")</li>
-                    <li>@Html.ActionLink("Employment", "Employment", "Home")</li>
-                    <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-}
+
         </div>
     </div>
-
-    @RenderBody()
-
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    
+    @RenderBody()
+
+
+
+
 
     
-</body>
+</div>

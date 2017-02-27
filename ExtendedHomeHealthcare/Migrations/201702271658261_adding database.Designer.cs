@@ -7,13 +7,13 @@ namespace ExtendedHomeHealthcare.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initialmigration : IMigrationMetadata
+    public sealed partial class addingdatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addingdatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201702231449298_initialmigration"; }
+            get { return "201702271658261_adding database"; }
         }
         
         string IMigrationMetadata.Source

@@ -12,7 +12,7 @@ namespace ExtendedHomeHealthcare.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(ExtendedHomeHealthcare.Models.ApplicationDbContext context)
@@ -29,14 +29,8 @@ namespace ExtendedHomeHealthcare.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            //    context.Roles.AddOrUpdate(r => r.Name,
-            //        new IdentityRole { Name = "Admin" },
-            //        new IdentityRole { Name = "Caregiver" }
-            //        );
-            //}
-
             var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            string[] roleNames = { "Admin", "Caregiver", "User" };
+            string[] roleNames = { "Admin", "Caregiver" };
             IdentityResult roleResult;
             foreach (var roleName in roleNames)
             {
@@ -45,10 +39,9 @@ namespace ExtendedHomeHealthcare.Migrations
                     roleResult = RoleManager.Create(new IdentityRole(roleName));
                 }
             }
-
-
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            UserManager.AddToRole("c1cbdf17-14c8-4a8e-92e2-091edd056286", "Admin");
+            UserManager.AddToRole("ffbf4a4a-536e-49b1-a5d9-eb89dbecf73c", "Admin");
+            UserManager.AddToRole("b3af8a21-2048-4411-b859-8a0c9b52c2c8", "Caregiver");
         }
     }
 }

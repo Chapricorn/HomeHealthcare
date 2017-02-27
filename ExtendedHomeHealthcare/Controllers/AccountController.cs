@@ -92,9 +92,9 @@ namespace ExtendedHomeHealthcare.Controllers
             // This prevents user to relog-in if already logged in
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Caregiver", "Home");
+                return RedirectToAction("About", "Home");
             }
-            ViewBag.ReturnUrl = returnUrl ?? Url.Action("Caregiver", "Home");
+            ViewBag.ReturnUrl = returnUrl ?? Url.Action("About", "Home");
             return View();
         }
 
@@ -116,7 +116,7 @@ namespace ExtendedHomeHealthcare.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction("Caregiver", "Home");
+                    return RedirectToAction("About", "Home");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

@@ -1,4 +1,5 @@
-﻿using ExtendedHomeHealthcare.Models;
+﻿
+using ExtendedHomeHealthcare.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
