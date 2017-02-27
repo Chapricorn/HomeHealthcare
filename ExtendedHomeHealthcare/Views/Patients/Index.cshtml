@@ -1,272 +1,94 @@
 ﻿@model IEnumerable<ExtendedHomeHealthcare.Models.Patient>
-<br /><br /><br /><br />
-<div class="container">
-    <center><img src="~/Content/image/Ginkologo_final_web.jpg" /></center>
-    @{
-        ViewBag.Title = "Index";
+@{
+    ViewBag.Title = "Route";
+}
+
+
+<style>
+    #map {
+        height: 400px;
+        width: 100%;
+        margin-top:250px;
     }
+</style>
 
-    <h2>Register New Patients</h2>
 
-  
-        <center>
-            <p>
-                @Html.ActionLink("Click here to Register New Patients ", "Create")
-            </p>
-        </center>
+<div id="map"></div>
 
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Age)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StreetName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StreetName2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.State)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ZipCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th></th>
-        </tr>
+<script>
+     function initMap() {
+       var directionsService = new google.maps.DirectionsService;
+       var directionsDisplay = new google.maps.DirectionsRenderer;
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 16,
+         center: { lat: 43.034134, lng: -87.911953 }
+       });
+       directionsDisplay.setMap(map);
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Age)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StreetName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StreetName2)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.State)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ZipCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
-        }
+       document.getElementById('submit').addEventListener('click', function() {
+         calculateAndDisplayRoute(directionsService, directionsDisplay);
+       });
+     }
+     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
-    </table>
-</div>
 
-<br /><br /><br /><br />
+       directionsService.route({
+         origin: document.getElementById('start').value,
+         destination: document.getElementById('end').value,
+         //waypoints: waypts,
+         //optimizeWaypoints: true,
+         travelMode: 'DRIVING'
+       }, function(response, status) {
+         if (status === 'OK') {
+           directionsDisplay.setDirections(response);
+           var route = response.routes[0];
+           var summaryPanel = document.getElementById('directions-panel');
+           summaryPanel.innerHTML = '';
+           // For each route, display summary information.
+
+         } else {
+           window.alert('Directions request failed due to ' + status);
+         }
+       });
+     }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUo7yxQcCkBnryWfkSN1tnd5C_ptUpm8Y&callback=initMap">
+</script>
+
+
 <center>
+    <h3>Patients Route</h3>
 
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<div id="right-panel">
+    <div>
+        <b>Start Location:</b>
+        <select id="start">
+            <option value="6300 N 76th Street, 53218">Extended Home Health Care </option>
+        </select>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUo7yxQcCkBnryWfkSN1tnd5C_ptUpm8Y&sensor=false">
+        <b>Patients:</b>
+        <select id="end">
+            @{int i = 1;}
+            @foreach (var Patients in Model)
+            {
 
-    </script>
+                <option value="@Patients.StreetName,@Patients.ZipCode">@i @Patients.LastName </option>
+                i++;
 
-    <script type="text/javascript">
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(success);
-        } else {
-            alert("There is Some Problem on your current browser to get Geo Location!");
-        }
-
-        function success(position) {
-            var lat = position.coords.latitude;
-            var long = position.coords.longitude;
-            var city = position.coords.locality;
-            var LatLng = new google.maps.LatLng(lat, long);
-            var mapOptions = {
-                center: LatLng,
-                zoom: 12,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-
-            var map = new google.maps.Map(document.getElementById("MyMapLOC"), mapOptions);
-            var marker = new google.maps.Marker({
-                position: LatLng,
-                title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: "
-                            + lat + +"<br />Longitude: " + long
-            });
-
-            marker.setMap(map);
-            var getInfoWindow = new google.maps.InfoWindow({ content: "<b>Your Current Location</b><br/> Latitude:" +
-                                    lat + "<br /> Longitude:" + long + ""
-            });
-            getInfoWindow.open(map, marker);
-        }
-    </script>
-
-    <script type="text/javascript">
-
-        function SearchRoute() {
-            document.getElementById("MyMapLOC").style.display = 'none';
-
-            var markers = new Array();
-            var myLatLng;
-
-            //Find the current location of the user.
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(p) {
-                    var myLatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
-                    var m = {};
-                    m.title = "Your Current Location";
-                    m.lat = p.coords.latitude;
-                    m.lng = p.coords.longitude;
-                    markers.push(m);
-
-                    //Find Destination address location.
-                    var address = document.getElementById("txtDestination").value;
-                    var geocoder = new google.maps.Geocoder();
-                    geocoder.geocode({ 'address': address }, function(results, status) {
-                        if (status == google.maps.GeocoderStatus.OK) {
-                            m = {};
-                            m.title = address;
-                            m.lat = results[0].geometry.location.lat();
-                            m.lng = results[0].geometry.location.lng();
-                            markers.push(m);
-                            var mapOptions = {
-                                center: myLatLng,
-                                zoom: 4,
-                                mapTypeId: google.maps.MapTypeId.ROADMAP
-                            };
-                            var map = new google.maps.Map(document.getElementById("MapRoute"), mapOptions);
-                            var infoWindow = new google.maps.InfoWindow();
-                            var lat_lng = new Array();
-                            var latlngbounds = new google.maps.LatLngBounds();
-
-                            for (i = 0; i < markers.length; i++) {
-                                var data = markers[i];
-                                var myLatlng = new google.maps.LatLng(data.lat, data.lng);
-                                lat_lng.push(myLatlng);
-                                var marker = new google.maps.Marker({
-                                    position: myLatlng,
-                                    map: map,
-                                    title: data.title
-                                });
-                                latlngbounds.extend(marker.position);
-                                (function(marker, data) {
-                                    google.maps.event.addListener(marker, "click", function(e) {
-                                        infoWindow.setContent(data.title);
-                                        infoWindow.open(map, marker);
-                                    });
-                                })(marker, data);
-                            }
-                            map.setCenter(latlngbounds.getCenter());
-                            map.fitBounds(latlngbounds);
-
-                            //***********ROUTING****************//
-
-                            //Initialize the Path Array.
-                            var path = new google.maps.MVCArray();
-
-                            //Getting the Direction Service.
-                            var service = new google.maps.DirectionsService();
-
-                            //Set the Path Stroke Color.
-                            var poly = new google.maps.Polyline({ map: map, strokeColor: '#4986E7' });
-
-                            //Loop and Draw Path Route between the Points on MAP.
-                            for (var i = 0; i < lat_lng.length; i++) {
-                                if ((i + 1) < lat_lng.length) {
-                                    var src = lat_lng[i];
-                                    var des = lat_lng[i + 1];
-                                    path.push(src);
-                                    poly.setPath(path);
-                                    service.route({
-                                        origin: src,
-                                        destination: des,
-                                        travelMode: google.maps.DirectionsTravelMode.DRIVING
-                                    }, function(result, status) {
-                                        if (status == google.maps.DirectionsStatus.OK) {
-                                            for (var i = 0, len = result.routes[0].overview_path.length; i < len; i++) {
-                                                path.push(result.routes[0].overview_path[i]);
-                                            }
-                                        } else {
-                                            alert("Invalid location.");
-                                            window.location.href = window.location.href;
-                                        }
-                                    });
-                                }
-                            }
-                        } else {
-                            alert("Request failed.")
-                        }
-                    });
-
-                });
             }
-            else {
-                alert('Some Problem in getting Geo Location.');
-                return;
-            }
-        }
-    </script>
+            <option value="333 N Plankinton Ave, 53203">GYJ Enterprise HQ</option>
+            >
+        </select>
+        <input type="submit" id="submit">
+    </div>
+    <div id="directions-panel"></div>
+</div>
+    </center>
 
 
-    <form id="form1" runat="server" >
-        <table>
-            <tr>
-                <td style="padding-left: 30px; padding-top: 30px; padding-bottom: 30px; background-color: skyblue;
-                text-align: center; font-family: Verdana; font-size: 20pt; color: Black;">
-                    Route Between Current Position & Destination
-                </td>
-            </tr>
-            <tr>
-                <td style="background-color: skyblue; text-align: center; font-family: Verdana; font-size: 14pt;
-                color: red;">
-                    <b>Enter Destination:</b>
-                    <input type="text" id="txtDestination" value="" style="width: 200px" />
-                    <input type="button" value="Search Route" onclick="SearchRoute()" />
-                </td>
 
-            </tr>
-            <tr>
-                <td>
-                    <div id="MyMapLOC" style="width: 700px; height: 500px">
-                    </div>
-                    <div id="MapRoute" style="width: 700px; height: 500px">
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </form>
 
-</center> 
 
 <footer>
     <center>
