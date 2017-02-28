@@ -71,3 +71,20 @@ select option{width:255px;}
 {
     margin-top:50px;
 }
+
+ 
+.scheduler_container{
+    width:70%;
+    height:400px;
+    border:1px solid #aeaeae;
+}
+
+@media (min-width:1200px)
+{
+    .container
+    {
+        width: 80%
+
+    }
+
+}

@@ -26,6 +26,7 @@ namespace ExtendedHomeHealthcare.Models
         DbSet<State> state { get; set; }
         DbSet<ZipCode> zipcode { get; set; }
         DbSet<Patient> patients { get; set; }
+        public System.Data.Entity.DbSet<Appointment> appointmnet { get; set; }
         public ApplicationDbContext()
         : base("DefaultConnection", throwIfV1Schema: false)
         {

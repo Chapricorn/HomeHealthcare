@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
+
 namespace ExtendedHomeHealthcare.Controllers
 {
     public class HomeController : Controller
@@ -46,14 +47,6 @@ namespace ExtendedHomeHealthcare.Controllers
 
             return View();
         }
-
-
-
-        //[HttpGet]
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
 
 
         //[Authorize(Roles = "Admin")]
@@ -115,7 +108,7 @@ namespace ExtendedHomeHealthcare.Controllers
         {
             return View();
         }
-
+   
     }
     
 }
