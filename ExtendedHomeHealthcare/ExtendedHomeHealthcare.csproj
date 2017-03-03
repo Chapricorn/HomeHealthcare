@@ -424,6 +424,7 @@
     <Content Include="ClassDiagram1.cd" />
     <Content Include="Content\image\PatientForm.pdf" />
     <Content Include="Content\image\Timesheet.pdf" />
+    <Content Include="Content\image\VacationRequestForm.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\calendar\fullcalendar.min.js" />
     <Content Include="Scripts\calendar\jquery.min.js" />
