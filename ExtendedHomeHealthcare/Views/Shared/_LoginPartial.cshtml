@@ -26,9 +26,9 @@ else if (Request.IsAuthenticated && User.IsInRole("Caregiver"))
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-            <li>@Html.ActionLink("Calendar", "Index", "Calendar")</li>
+            <li>@Html.ActionLink("Work Schedules", "Index", "Calendar")</li>
             <li>@Html.ActionLink("Directions", "Map", "Patients")</li>
-            <li>@Html.ActionLink("Caregiver", "Caregiver", "Home")</li>
+            <li>@Html.ActionLink("Pay Roll", "Caregiver", "Home")</li>
            <li> @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
