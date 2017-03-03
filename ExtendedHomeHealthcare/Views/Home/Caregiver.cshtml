@@ -14,12 +14,12 @@
     <h2>Caregiver Payroll</h2>
 
 
-    <br /><br /><br /><br />
+    <br /><br /><br />
     <strong>Weekly Time Sheets</strong>
-    <p><a href="~/Content/image/TimeSheet.pdf" value="Resume"> Personal Care Worker (PCW) Time Sheet </a></p>
+    <p><a href="~/Content/image/Timesheet.pdf" value="Resume"> Personal Care Worker (PCW) Time Sheet </a></p>
     <strong>New Patients Enrollment</strong>
     <p><a href="~/Content/image/PatientForm.pdf" value="Resume"> New Patient Form</a></p>
-        <a href="~/Content/image/paystub.JPG" download="">Click here to download paystub</a>
+       
  
 </center>
 
@@ -101,283 +101,286 @@
 
                 <h1 style="text-align: center;      color: #5F5757;">Your Earning Statement</h1>
 
-                <div class="buttomarea" style="line-height: 24px;float: left;margin: 5px 0;">
-                    <input type="hidden" class="contract" name="stubs[header][contractor]" value="0" id="contract" />
-                    <span class="contractor">
-                        <div class="btn-group" data-toggle="buttons-checkbox"></div>
-                    </span>
-                </div>
+                <center>
+                   
+                    <br /><br />
 
-                <div class="midarea">
+                    <div class="buttomarea" style="line-height: 24px;float: left;margin: 5px 0;">
+                        <input type="hidden" class="contract" name="stubs[header][contractor]" value="0" id="contract" />
+                        <span class="contractor">
+                            <div class="btn-group" data-toggle="buttons-checkbox"></div>
+                        </span>
+                    </div>
 
-                    <form method="post" id="stubsForm" action="geteasysub">
-                        <input type="hidden" name="_token" value="wjzIjqqViwywDASDfTMwcotDuf5MDaAifckJvbJB">
+                    <div class="midarea">
 
-
-                        <div class="repdiv1">
-                            How are you paid?
-                            <select name="howpaid" class="refreshable" id="howpaid" style="width:100px;" data-old="1">
-                                <option value="1">Weekly</option>
-                                <option value="2">Bi-Weekly</option>
-                                <option value="3">Monthly</option>
-                                <option value="4">Semi-Monthly</option>
-                                <option value="5">Annually</option>
-                            </select>
-                  
-                            <span style="font-weight: normal;" title="Use Pay Period ytd for employees that haven't worked the entire year or to manipulate the employee ytd." rel="tooltip">Pay Period YTD </span>
-                            <select name="taxRate" class="refreshable" id="taxRate" style="width: 50px;">
-                                <option value=""></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                                <option value="21">21</option>
-                                <option value="22">22</option>
-                                <option value="23">23</option>
-                                <option value="24">24</option>
-                                <option value="25">25</option>
-                                <option value="26">26</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>
-                                <option value="29">29</option>
-                                <option value="30">30</option>
-                                <option value="31">31</option>
-                                <option value="32">32</option>
-                                <option value="33">33</option>
-                                <option value="34">34</option>
-                                <option value="35">35</option>
-                                <option value="36">36</option>
-                                <option value="37">37</option>
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                                <option value="44">44</option>
-                                <option value="45">45</option>
-                                <option value="46">46</option>
-                                <option value="47">47</option>
-                                <option value="48">48</option>
-                                <option value="49">49</option>
-                                <option value="50">50</option>
-                                <option value="51">51</option>
-                                <option value="52">52</option>
-                            </select>
-                            
-                        </div>
-
-                        <table class="tablex" width="760" height="251" border="1">
-                            <tr>
-                                <td height="34" colspan="5" bgcolor="#999999">
-                                  
-                                       <center>EARNING STATEMENT</center> 
-                                   
+                        <form method="post" id="stubsForm" action="geteasysub">
+                            <input type="hidden" name="_token" value="wjzIjqqViwywDASDfTMwcotDuf5MDaAifckJvbJB">
 
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height="35" colspan="5"><input type="text" id="mynameandadress" class="addtext" maxlength="60" name="stubs[header][employeename]" value="" placeholder="Kou Cha, 9724 Jarvis Circle, Jax FL" required data-val="John Doe, 123 Abc Street, Jax FL">&nbsp;  <label id="mylavel1chk" for="stubnumber">#</label>  <input type="text" class="addtext" name="stubs[1][stubnumber]" id="stubnumber" value="12345" placeholder="Pay stub no: ex 12354" required> </td>
-                            </tr>
-                            <tr>
-                                <td width="320" height="38" align="center" bgcolor="#999999"><label>SSN</label>&nbsp;</td>
-                                <td colspan="2" align="center" bgcolor="#999999"><label>PAY PERIOD</label>&nbsp;</td>
-                                <td width="149" align="center" bgcolor="#999999"><label>PAY DATE</label>&nbsp;</td>
-                                <td width="146" align="center" bgcolor="#999999">
-                                    <label>EMPLOYEE ID </label>
-                                    &nbsp;
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height="32" align="center"><input type="text" class="addtext" name="stubs[header][sss]" style="width:40%;" placeholder="XXX-XX-1234" required value="" data-val="XXX-XX-1234">&nbsp;</td>
-                                <td colspan="2" align="center"><input type="text" name="stubs[1][txtPayPeriod]" class="refreshable" id="txtPayPeriod" value="01/31/2017 - 08/16/2017" style="width:70%;">&nbsp;</td>
-                                <td align="center"><input type="text" name="stubs[1][txtPayDate]" class="refreshable" id="txtPayDate" required value="02/23/17" style="width:85%;">&nbsp;</td>
-                                <td align="center"><input type="text" class="addtext" name="stubs[header][employeeid2]" style="width:35%" placeholder="Employee ID" required value="823542" data-val="123">&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td height="48" bgcolor="#999999">
-                                    <label id="incomex">
-                                        INCOME
-                                    </label> <label id="tatex">
+                            <div class="repdiv1">
+                                How are you paid?
+                                <select name="howpaid" class="refreshable" id="howpaid" style="width:100px;" data-old="1">
+                                    <option value="1">Weekly</option>
+                                    <option value="2">Bi-Weekly</option>
+                                    <option value="3">Monthly</option>
+                                    <option value="4">Semi-Monthly</option>
+                                    <option value="5">Annually</option>
+                                </select>
 
-                                        RATE
-                                    </label><label id="hoursx">
+                                <span style="font-weight: normal;" title="Use Pay Period ytd for employees that haven't worked the entire year or to manipulate the employee ytd." rel="tooltip">Pay Period YTD </span>
+                                <select name="taxRate" class="refreshable" id="taxRate" style="width: 50px;">
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                </select>
 
-                                        HOURS
-                                    </label>&nbsp;&nbsp;
-                                </td>
-                                <td width="145" height="48" bgcolor="#999999">
-                                    <label></label>&nbsp;<label>
+                            </div>
 
-                                        <strong>CURRENT TOTAL</strong>
-                                    </label>
-                                </td>
-                                <td width="193" bgcolor="#999999">
-                                    <label>
-                                        <strong>DEDUCTIONS</strong>
-                                    </label>
-                                    <strong>&nbsp;</strong>
-                                </td>
-                                <td height="48" align="center" bgcolor="#999999">
-                                    <label>
+                            <table class="tablex" width="760" height="251" border="1">
+                                <tr>
+                                    <td height="34" colspan="5" bgcolor="#999999">
 
-                                        <strong>TOTAL</strong>
-                                    </label>
-                                    <strong>&nbsp;</strong>
-                                </td>
-                                <td height="48" align="center" bgcolor="#999999">
-                                    <label>
+                                        <center>EARNING STATEMENT</center>
 
-                                        <strong>YTD TOTAL</strong>
-                                    </label>
-                                    <strong>&nbsp;</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" rowspan="4" bgcolor="#FFFFFF">
-                                    <label id="payratelavel"> GROSS EARNINGS </label>
-                                    <input type="text" name="stubs[header][payrate]" old-value="0.00" class="refreshable" id="payrate" value="21.47">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="35" colspan="5"><input type="text" id="mynameandadress" class="addtext" maxlength="60" name="stubs[header][employeename]" value="" placeholder="Kou Cha, 9724 Jarvis Circle, Jax FL" required data-val="John Doe, 123 Abc Street, Jax FL">&nbsp;  <label id="mylavel1chk" for="stubnumber">#</label>  <input type="text" class="addtext" name="stubs[1][stubnumber]" id="stubnumber" value="12345" placeholder="Pay stub no: ex 12354" required> </td>
+                                </tr>
+                                <tr>
+                                    <td width="320" height="38" align="center" bgcolor="#999999"><label>SSN</label>&nbsp;</td>
+                                    <td colspan="2" align="center" bgcolor="#999999"><label>PAY PERIOD</label>&nbsp;</td>
+                                    <td width="149" align="center" bgcolor="#999999"><label>PAY DATE</label>&nbsp;</td>
+                                    <td width="146" align="center" bgcolor="#999999">
+                                        <label>EMPLOYEE ID </label>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="32" align="center"><input type="text" class="addtext" name="stubs[header][sss]" style="width:40%;" placeholder="XXX-XX-1234" required value="" data-val="XXX-XX-1234">&nbsp;</td>
+                                    <td colspan="2" align="center"><input type="text" name="stubs[1][txtPayPeriod]" class="refreshable" id="txtPayPeriod" value="01/31/2017 - 08/16/2017" style="width:70%;">&nbsp;</td>
+                                    <td align="center"><input type="text" name="stubs[1][txtPayDate]" class="refreshable" id="txtPayDate" required value="02/23/17" style="width:85%;">&nbsp;</td>
+                                    <td align="center"><input type="text" class="addtext" name="stubs[header][employeeid2]" style="width:35%" placeholder="Employee ID" required value="823542" data-val="123">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td height="48" bgcolor="#999999">
+                                        <label id="incomex">
+                                            INCOME
+                                        </label> <label id="tatex">
+
+                                            RATE
+                                        </label><label id="hoursx">
+
+                                            HOURS
+                                        </label>&nbsp;&nbsp;
+                                    </td>
+                                    <td width="145" height="48" bgcolor="#999999">
+                                        <label></label>&nbsp;<label>
+
+                                            <strong>CURRENT TOTAL</strong>
+                                        </label>
+                                    </td>
+                                    <td width="193" bgcolor="#999999">
+                                        <label>
+                                            <strong>DEDUCTIONS</strong>
+                                        </label>
+                                        <strong>&nbsp;</strong>
+                                    </td>
+                                    <td height="48" align="center" bgcolor="#999999">
+                                        <label>
+
+                                            <strong>TOTAL</strong>
+                                        </label>
+                                        <strong>&nbsp;</strong>
+                                    </td>
+                                    <td height="48" align="center" bgcolor="#999999">
+                                        <label>
+
+                                            <strong>YTD TOTAL</strong>
+                                        </label>
+                                        <strong>&nbsp;</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" rowspan="4" bgcolor="#FFFFFF">
+                                        <label id="payratelavel"> GROSS EARNINGS </label>
+                                        <input type="text" name="stubs[header][payrate]" old-value="0.00" class="refreshable" id="payrate" value="21.47">
 
 
-                                    <input type="text" name="stubs[header][payhours]" class="refreshable" id="payhours" " value="40">
+                                        <input type="text" name="stubs[header][payhours]" class="refreshable" id="payhours" " value="40">
 
-                                    <input type="text" name="stubs[header][grosspay]" class="refreshable" id="grosspay" class="refreshable" value="1458.80">
+                                        <input type="text" name="stubs[header][grosspay]" class="refreshable" id="grosspay" class="refreshable" value="1458.80">
 
 
-                                </td>
-                                <td height="48"><p>FICA - MEDICARE</p></td>
-                                <td height="48" align="center"> <input type="text" name="stubs[header][ficamedtax]" class="refreshable" id="ficamedtax" style="width:65%; " value="6.65"> </td>
-                                <td height="48" align="center">
-                                    <input type="text" name="stubs[1][ytdficamedtax]" class="refreshable" id="ytdficamedtax" style="width:65%; " value="345.80">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height="48"><p>FICA - SOCIAL SECURITY</p></td>
-                                <td height="48" align="center">
-                                    <input type="text" name="stubs[header][ficasstax]" class="refreshable" id="ficasstax" style="width:65%;" value="30.74">
-                                </td>
-                                <td height="48" align="center">
-                                    <input type="text" name="stubs[1][ytdficasstax]" class="refreshable" id="ytdficasstax" style="width:65%; " value="1431.56">
+                                    </td>
+                                    <td height="48"><p>FICA - MEDICARE</p></td>
+                                    <td height="48" align="center"> <input type="text" name="stubs[header][ficamedtax]" class="refreshable" id="ficamedtax" style="width:65%; " value="6.65"> </td>
+                                    <td height="48" align="center">
+                                        <input type="text" name="stubs[1][ytdficamedtax]" class="refreshable" id="ytdficamedtax" style="width:65%; " value="345.80">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="48"><p>FICA - SOCIAL SECURITY</p></td>
+                                    <td height="48" align="center">
+                                        <input type="text" name="stubs[header][ficasstax]" class="refreshable" id="ficasstax" style="width:65%;" value="30.74">
+                                    </td>
+                                    <td height="48" align="center">
+                                        <input type="text" name="stubs[1][ytdficasstax]" class="refreshable" id="ytdficasstax" style="width:65%; " value="1431.56">
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height="48"><p>FEDERAL TAX</p></td>
-                                <td height="48" align="center">
-                                    <input type="text" name="stubs[header][fedtax]" class="refreshable" id="fedtax" style="width:65%; " value="48.56">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="48"><p>FEDERAL TAX</p></td>
+                                    <td height="48" align="center">
+                                        <input type="text" name="stubs[header][fedtax]" class="refreshable" id="fedtax" style="width:65%; " value="48.56">
 
-                                </td>
-                                <td height="48" align="center">
-                                    <input type="text" name="stubs[1][ytdfedtax]" class="refreshable" id="ytdfedtax" style="width:65%; " value="2385.76">
+                                    </td>
+                                    <td height="48" align="center">
+                                        <input type="text" name="stubs[1][ytdfedtax]" class="refreshable" id="ytdfedtax" style="width:65%; " value="2385.76">
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height="48"><p>STATE TAX</p></td>
-                                <td height="48" align="center">
-                                    <input type="text" name="stubs[header][sttax]" class="refreshable" id="sttax" style="width:65%; " value="18.33">
-                                </td>
-                                <td height="48" align="center">
-                                    <input type="text" name="stubs[1][ytdsttax]" class="refreshable" id="ytdsttax" style="width:65%; " value="1431.56">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="48"><p>STATE TAX</p></td>
+                                    <td height="48" align="center">
+                                        <input type="text" name="stubs[header][sttax]" class="refreshable" id="sttax" style="width:65%; " value="18.33">
+                                    </td>
+                                    <td height="48" align="center">
+                                        <input type="text" name="stubs[1][ytdsttax]" class="refreshable" id="ytdsttax" style="width:65%; " value="1431.56">
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height="48" colspan="5">
-                                    <table width="977" border="1">
-                                        <tr>
-                                            <td width="144" height="40" align="center" bgcolor="#999999">YTD GROSS</td>
-                                            <td width="157" align="center" bgcolor="#999999">YTD DEDUCTIONS</td>
-                                            <td width="185" align="center" bgcolor="#999999">YTD NET PAY</td>
-                                            <td width="167" align="center" bgcolor="#999999">TOTAL</td>
-                                            <td width="180" align="center" bgcolor="#999999">DEDUCTIONS</td>
-                                            <td width="452" align="center" bgcolor="#999999">NET PAY</td>
-                                        </tr>
-                                        <tr>
-                                            <td height="40" align="center"><input type="text" name="stubs[1][ytdgross]" class="refreshable" id="ytdgross" style="width:70%;" value="23857.60">&nbsp;</td>
-                                            <td align="center">  <input type="text" name="stubs[1][ytddeductions]" class="refreshable" id="ytddeductions" style="width:70%;" value="4163.12">&nbsp;</td>
-                                            <td align="center">  <input type="text" name="stubs[1][ytdnetpay]" class="refreshable" id="ytdnetpay" style="width:70%;" value="19694.48">&nbsp;</td>
-                                            <td align="center"> <input type="text" name="stubs[header][currenttotal]" class="refreshable" id="currenttotal" style="width:70%;" value="1458.80">&nbsp;</td>
-                                            <td align="center"><input type="text" name="stubs[header][currentdeductions]" class="refreshable" id="currentdeductions" style="width:70%;" value="80.06">&nbsp;</td>
-                                            <td align="center"><input type="text" name="stubs[header][netpay]" id="netpay" class="refreshable" style="width:70%;" value="1378.74">&nbsp;</td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr></tr>
-                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="48" colspan="5">
+                                        <table width="977" border="1">
+                                            <tr>
+                                                <td width="144" height="40" align="center" bgcolor="#999999">YTD GROSS</td>
+                                                <td width="157" align="center" bgcolor="#999999">YTD DEDUCTIONS</td>
+                                                <td width="185" align="center" bgcolor="#999999">YTD NET PAY</td>
+                                                <td width="167" align="center" bgcolor="#999999">TOTAL</td>
+                                                <td width="180" align="center" bgcolor="#999999">DEDUCTIONS</td>
+                                                <td width="452" align="center" bgcolor="#999999">NET PAY</td>
+                                            </tr>
+                                            <tr>
+                                                <td height="40" align="center"><input type="text" name="stubs[1][ytdgross]" class="refreshable" id="ytdgross" style="width:70%;" value="23857.60">&nbsp;</td>
+                                                <td align="center">  <input type="text" name="stubs[1][ytddeductions]" class="refreshable" id="ytddeductions" style="width:70%;" value="4163.12">&nbsp;</td>
+                                                <td align="center">  <input type="text" name="stubs[1][ytdnetpay]" class="refreshable" id="ytdnetpay" style="width:70%;" value="19694.48">&nbsp;</td>
+                                                <td align="center"> <input type="text" name="stubs[header][currenttotal]" class="refreshable" id="currenttotal" style="width:70%;" value="1458.80">&nbsp;</td>
+                                                <td align="center"><input type="text" name="stubs[header][currentdeductions]" class="refreshable" id="currentdeductions" style="width:70%;" value="80.06">&nbsp;</td>
+                                                <td align="center"><input type="text" name="stubs[header][netpay]" id="netpay" class="refreshable" style="width:70%;" value="1378.74">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr></tr>
+                            </table>
 
-                        <div class="clear"></div>
-
-                        <div class="clear"></div>
-                        <br /><br />
-
-                        <div id="show_popup"></div>
-
-                        <br>
-
-                        
-                        <div class="row buttons" id="lbhtml" style="float: left; margin-left: 20px;">
-                        </div>
-                        <div class="clear"></div>
-                        <div id="submit">
-           
-                           
                             <div class="clear"></div>
-                        </div>
-                        <input type="hidden" value="classic" name="stubs[classic]" />
-                    </form>
-                    <div class="clear"></div>
-                </div>
-                
-                <script type="text/javascript" src="/js/moment.min.js"></script>
-                <script type="text/javascript" src="/js/federalTaxes.min.js"></script>
-                <script type="text/javascript" src="/js/stateTaxes.min.js"></script>
-                <script type="text/javascript" src="/js/stubs.min.js"></script>
-                <script type="text/javascript" src="/js/custom_classic.min.js"></script>
-                <script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
-                <script type="text/javascript" src="/js/intro.js"></script>
-                <script type="text/javascript">
-            function startIntro(){
-                var intro = introJs();
-                intro.setOptions({
-                    steps: [{
-                        element: '#howpaid',
-                        intro: "Choose pay frequency."
-                    },{
-                        element: '#maritalStatus',
-                        intro: 'Choose marital status.',
-                        position: 'right'
-                    },{
-                        element: '#txtPayDate',
-                        intro: 'Last 4 and pay date'
-                    },{
-                        element: '#lbhtml',
-                        intro: 'Enter'
-                    }]
-                });
 
-                intro.start();
-            }
-                </script>
-          
+                            <div class="clear"></div>
+                            <br /><br />
+
+                            <div id="show_popup"></div>
+
+                            <br>
+
+
+                            <div class="row buttons" id="lbhtml" style="float: left; margin-left: 20px;">
+                            </div>
+                            <div class="clear"></div>
+                            <div id="submit">
+
+
+                                <div class="clear"></div>
+                            </div>
+                            <input type="hidden" value="classic" name="stubs[classic]" />
+                        </form>
+                        <div class="clear"></div>
+                    </div>
+
+                    <script type="text/javascript" src="/js/moment.min.js"></script>
+                    <script type="text/javascript" src="/js/federalTaxes.min.js"></script>
+                    <script type="text/javascript" src="/js/stateTaxes.min.js"></script>
+                    <script type="text/javascript" src="/js/stubs.min.js"></script>
+                    <script type="text/javascript" src="/js/custom_classic.min.js"></script>
+                    <script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
+                    <script type="text/javascript" src="/js/intro.js"></script>
+                    <script type="text/javascript">
+                        function startIntro() {
+                            var intro = introJs();
+                            intro.setOptions({
+                                steps: [{
+                                    element: '#howpaid',
+                                    intro: "Choose pay frequency."
+                                }, {
+                                    element: '#maritalStatus',
+                                    intro: 'Choose marital status.',
+                                    position: 'right'
+                                }, {
+                                    element: '#txtPayDate',
+                                    intro: 'Last 4 and pay date'
+                                }, {
+                                    element: '#lbhtml',
+                                    intro: 'Enter'
+                                }]
+                            });
+
+                            intro.start();
+                        }
+                    </script>
+                    <a href="~/Content/image/paystub.JPG" download="">Click here to download Pay Statement</a>
+                </center>
     </div>
            
 </div>

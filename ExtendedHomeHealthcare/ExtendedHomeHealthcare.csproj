@@ -300,6 +300,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Caregiver.cs" />
@@ -409,7 +410,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\image\Ginkologo_final-small.pdf" />
-    <Content Include="Content\image\TimeSheet.pdf" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
@@ -423,6 +423,7 @@
     <Content Include="Content\image\employment-application.pdf" />
     <Content Include="ClassDiagram1.cd" />
     <Content Include="Content\image\PatientForm.pdf" />
+    <Content Include="Content\image\Timesheet.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\calendar\fullcalendar.min.js" />
     <Content Include="Scripts\calendar\jquery.min.js" />

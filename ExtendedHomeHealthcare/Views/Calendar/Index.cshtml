@@ -1,11 +1,25 @@
-﻿@{
+﻿<br /><br /><br /><br />
+@{
     ViewBag.Title = "DHTMLX Scheduler .NET";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
+    <center><img src="~/Content/image/Ginkologo_final_web.jpg" /></center>
 
-<br /><br /><br /><br /><br /><br /><br />
-<center><h2>Appointment Calendar</h2></center>
-<br /><br /><br />
-<div class="scheduler_container">
-    @Html.Raw(Model.Render())
+    <br /><br /><br />
+    <center>
+        <h2>Caregiver Work Schedules</h2>
+        <br /><br />
+        <div class="scheduler_container">
+            @Html.Raw(Model.Render())
+        </div>
+        <br /><br />
+        <a href="Model.Render" download="">Download Worked Hours</a>
+
+    </center>
 </div>
+<footer>
+    <center>
+        <p>&copy; @DateTime.Now.Year - United Extended Home Healthcare</p>
+    </center>
+</footer>
